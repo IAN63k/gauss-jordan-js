@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauss-Jordan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Metodo de Gauss Jordan</h1>
+        <hr>
+        <section>
+            <div class="data">
+                <h4><span>#</span> Tenga en cuenta</h4>
+                <ol>
+                    <li>Ingresar las ecuaciones</li>
+                    <li>Aquellos datos que solo tengan una variable, ingresar el # 1 seguido de su variable</li>
+                    <li>Ingresar la igualación despues del '='</li>
+                    <span>#</span> Obtendras la matriz aumentada y su reducción
+                </ol>
+                <form action="" method="post" id="form">
+                    <div>
+                        <input type="text" name="" id="ecu1" placeholder="Ecuacion 1" class="input">
+                        <span> = </span><input type="text" name="" id="result1" class="minInput"
+                            placeholder="Resultado">
+                    </div>
+                    <div>
+                        <input type="text" name="" id="ecu2" placeholder="Ecuacion 2" class="input">
+                        <span> = </span><input type="text" name="" id="result2" class="minInput"
+                            placeholder="Resultado">
+                    </div>
+                    <div>
+
+                        <input type="text" name="" id="ecu3" placeholder="Ecuacion 3" class="input">
+                        <span> = </span><input type="text" name="" id="result3" class="minInput"
+                            placeholder="Resultado">
+                    </div>
+
+                    <p></p>
+                    <input type="button" value="Resolver" id="btn" class="btn">
+                </form>
+                <p></p>
+            </div>
+            <div class="matriz">
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
