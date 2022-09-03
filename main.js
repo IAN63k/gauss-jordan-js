@@ -102,6 +102,52 @@ const convertirReal = (ecuacion) => {
     return n;
 }
 
+const gaussJordan = (matriz) => {
+    let nuevaMatriz = [...matriz];
+    let pivote1 = (matriz[0][0] === 1) ? false : matriz[0][0];
+    if (pivote1) { // Verifica el primer pivote
+        for (let i = 0; i < 4; i++) {
+            nuevaMatriz[0][i] = matriz[0][i] / pivote1;
+        }
+        nuevaMatriz = ponerCeros(nuevaMatriz);
+        // Si hay pivote pasa al caso contrario
+    } else { nuevaMatriz = ponerCeros(nuevaMatriz); }
+    if (nuevaMatriz[1][0] === 0 && nuevaMatriz[2][0] === 0) { // los 0 en la primera columna estan?
+        let pivote2 = (nuevaMatriz[1][1] === 1) ? false : nuevaMatriz[1][1];
+        if (pivote2) { // Verifica el segundo pivote
+            for (let i = 0; i < 4; i++) {
+                nuevaMatriz[1][i] = nuevaMatriz[1][i] / pivote2;
+            }
+            nuevaMatriz = ponerCeros(nuevaMatriz);
+            // Si hay pivote pasa al caso contrario
+        } else { nuevaMatriz = ponerCeros(nuevaMatriz); }
+    }
+    if (nuevaMatriz[0][1] === 0 && nuevaMatriz[2][1] === 0) { // Los 0 en la segunda columna estan?
+        let pivote3 = (nuevaMatriz[2][2] === 1) ? false : nuevaMatriz[2][2];
+        if (pivote3) { // Verifica el terce pivote
+            for (let i = 0; i < 4; i++) {
+                nuevaMatriz[2][i] = nuevaMatriz[2][i] / pivote3;
+            }
+            nuevaMatriz = ponerCeros(nuevaMatriz);
+            // Si hay pivote pasa al caso contrario
+        } else { nuevaMatriz = ponerCeros(nuevaMatriz); }
+
+    }
+
+    else {
+        ponerCeros(nuevaMatriz);
+    }
+
+    // Aqui se elimina error de referencia a infinito '-0'
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (nuevaMatriz[i][j].toLocaleString('es') === '-0') {
+                nuevaMatriz[i][j] = 0;
+            }
+        }
+    }
+    return nuevaMatriz;
+}
 
 btn.addEventListener('click', () => {
     try {
