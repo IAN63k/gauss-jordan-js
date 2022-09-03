@@ -13,6 +13,19 @@ html, body {
     overflow: hidden;
 }
 
+a{
+    text-decoration: none;
+    color: wheat;
+}
+
+.autor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+}
+
+
 section {
     position: relative;
     display: flex;
@@ -81,6 +94,10 @@ table td {
 @media (max-width: 990px) {
     html, body {
         overflow: auto;
+    }
+
+    .autor{
+        margin: 5px;
     }
 
     section {
