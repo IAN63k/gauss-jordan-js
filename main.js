@@ -94,6 +94,14 @@ const ponerCeros = (matriz) => {
     return nuevaMatrizConCeros;
 }
 
+const convertirReal = (ecuacion) => {
+    let n = [];
+    ecuacion.forEach((elemento) => {
+        n.push(Number(elemento))
+    });
+    return n;
+}
+
 
 btn.addEventListener('click', () => {
     try {
