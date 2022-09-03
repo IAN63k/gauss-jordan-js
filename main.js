@@ -56,6 +56,44 @@ const operacion = (arreglo1, arreglo2, nx) => {
     return arregloConCero;
 }
 
+const ponerCeros = (matriz) => {
+    let nuevaMatrizConCeros = matriz;
+    if (matriz[1][0] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[1] = operacion(matriz[0], matriz[1], matriz[1][0]);
+        }
+    }
+    if (matriz[2][0] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[2] = operacion(matriz[0], matriz[2], matriz[2][0]);
+        }
+    }
+    if (matriz[1][1] === 1 && matriz[0][1] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[0] = operacion(matriz[1], matriz[0], matriz[0][1]);
+        }
+    }
+
+    if (matriz[1][1] === 1 && matriz[2][1] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[2] = operacion(matriz[1], matriz[2], matriz[2][1]);
+        }
+    }
+    if (matriz[2][2] === 1 && matriz[0][2] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[0] = operacion(matriz[2], matriz[0], matriz[0][2]);
+        }
+    }
+
+    if (matriz[2][2] === 1 && matriz[1][2] != 0) {
+        for (let i = 0; i < 4; i++) {
+            nuevaMatrizConCeros[1] = operacion(matriz[2], matriz[1], matriz[1][2]);
+        }
+    }
+
+    return nuevaMatrizConCeros;
+}
+
 
 btn.addEventListener('click', () => {
     try {
