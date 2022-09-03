@@ -47,6 +47,14 @@ const dibujarMatriz = (matriz) => {
     return div.firstElementChild;
 }
 
+const operacion = (arreglo1, arreglo2, nx) => {
+    // El segundo arreglo es el fijo
+    let arregloConCero = [];
+    for (let i = 0; i < 4; i++) {
+        arregloConCero.push(arreglo2[i] - nx * arreglo1[i]);
+    }
+    return arregloConCero;
+}
 
 
 btn.addEventListener('click', () => {
